@@ -1,0 +1,66 @@
+﻿@model List<Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <a asp-action="Create" asp-controller="Employee">create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               ID
+
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+               email
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Employee item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                   
+                    <a asp-action="Update" onclick="return"
+                       asp-controller="Employee" asp-route-id="@item.id">Edit</a>
+
+                    <a asp-action="Delete" onclick="return confirm('Are you sure you want to Update?')"
+                       asp-controller="Employee" asp-route-id="@item.id">Delete</a>
+
+                </td>
+            </tr>
+
+
+        }
+
+
+    </tbody>
+</table>
+
+
+

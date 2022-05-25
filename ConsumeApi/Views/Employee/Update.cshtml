@@ -1,0 +1,48 @@
+﻿@model ConsumeApi.Models.Employee
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Create employee</h4>
+                <div class="card-body">
+                    <form asp-action="Update" asp-controller="Employee"
+                          method="post">
+                        <div class="form-group">
+                            <lable>Id</lable>
+                            <input type="text" asp-for="id" class="form-control" />
+                            <input id="Id" name="Id" type="hidden" />
+                            <span asp-validation-for="id" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <lable>firstName</lable>
+                            <input type="text" asp-for="firstname" class="form-control" />
+                            <span asp-validation-for="firstname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <lable>lastName</lable>
+                            <input type="text" asp-for="lastname" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <lable>email</lable>
+                            <input type="text" asp-for="email" class="form-control" />
+                        </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" onclick="return confirm(' Update successful?')"class="btn btn-success">
+                                <strong>Update</strong>
+                            </button>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
